@@ -1,11 +1,14 @@
-<ActionBar title="My App"> </ActionBar>
+<StackLayout>
+  <Label text="Задача 1: Знайти кількість чисел, кратних 29, парних і при діленні на 5 дають в остачі 2 на проміжку [a,b]" textWrap="true"></Label>
+  <TextField [(ngModel)]="a" keyboardType="number" hint="Введіть a"></TextField>
+  <TextField [(ngModel)]="b" keyboardType="number" hint="Введіть b"></TextField>
+  <Button text="Обчислити" (tap)="calculateMultiples()"></Button>
+  <Label [text]="'Результат: ' + multiplesOf29"></Label>
 
-<GridLayout>
-  <ListView [items]="items">
-    <ng-template let-item="item">
-      <StackLayout [nsRouterLink]="['/item', item.id]">
-        <Label [text]="item.name"></Label>
-      </StackLayout>
-    </ng-template>
-  </ListView>
-</GridLayout>
+  <Label text="Задача 2: Задано три числа. Якщо хоч одне з них додатне, то знайти квадрат суми. В іншому випадку – суму квадратів." textWrap="true"></Label>
+  <TextField [(ngModel)]="num1" keyboardType="number" hint="Введіть перше число"></TextField>
+  <TextField [(ngModel)]="num2" keyboardType="number" hint="Введіть друге число"></TextField>
+  <TextField [(ngModel)]="num3" keyboardType="number" hint="Введіть третє число"></TextField>
+  <Button text="Обчислити" (tap)="calculateSumOrSquares()"></Button>
+  <Label [text]="'Результат: ' + result"></Label>
+</StackLayout>
